@@ -3,7 +3,7 @@ const {Intro, About, Project, Contact, Experience, Course} = require('../models/
 const User = require('../models/userModel');
 
 // get all portfolio data
-router.get('https://portfolix.onrender.com/api/portfolio/get-portfolio-data', async(req,res)=>{
+router.get('/get-portfolio-data', async(req,res)=>{
     try{
         const intros = await Intro.find();
         const abouts = await About.find();
