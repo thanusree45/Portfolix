@@ -14,7 +14,7 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading(true));
-      const response = await axios.get('/api/portfolio/get-portfolio-data');
+      const response = await axios.get('https://portfolix.onrender.com/api/portfolio/get-portfolio-data');
       dispatch(setPortfolioData(response.data));
       dispatch(ReloadData(false));
       dispatch(HideLoading(true));
