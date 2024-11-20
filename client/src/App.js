@@ -6,7 +6,7 @@ import Loader from "./components/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { HideLoading, setPortfolioData, ShowLoading, ReloadData } from "./redux/rootSlice";
 import Admin from './pages/Admin';
-import Login from "./pages/Admin/Login";
+import Login from './pages/Admin/Login';
 
 function App() {
   const { loading, portfolioData, reloadData } = useSelector((state) => state.root);
