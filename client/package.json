@@ -44,10 +44,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
+
   },
   "proxy": "https://portfolix.onrender.com"
-=======
-  },"proxy": "https://portfolix.onrender.com"
->>>>>>> f2ad0a9e7460549d28ff52a65ffbc039b72ce7ec
 }
