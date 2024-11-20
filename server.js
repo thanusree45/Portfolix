@@ -2,7 +2,13 @@ const express = require('express')
 const app = express();
 
 const cors = require('cors');
-app.use(cors();
+const corsOptions = {
+  origin: 'https://portfolix-client.onrender.com', // your frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+};
+app.use(cors(corsOptions));
+
 
 require("dotenv").config();
 /*mongodb connection*/
