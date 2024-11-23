@@ -3,6 +3,7 @@ import Header from '../../components/Header'
 import AdminIntro from './AdminIntro';
 import AdminAbout from './AdminAbout';
 import { Tabs } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import AdminExperiences from './AdminExperiences';
 import AdminProjects from './AdminProjects';
@@ -13,12 +14,13 @@ import { useEffect } from 'react';
 const { TabPane } = Tabs;
 function Admin() {
     const { portfolioData } = useSelector((state) => state.root);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
-            window.location.href = "/admin-login";
+            navigate("/admin-login");
         }
-    }, []);
+    }, [navigate]);
 
     return (
         <div>
@@ -28,7 +30,7 @@ function Admin() {
                 <p type='submit' className="p-5 text-xl text-primary pr-4 cursor-pointer"
                     onClick={() => {
                         localStorage.removeItem("token");
-                        window.location.href = "/admin-login";
+                        navigate("/admin-login");
                     }}>Logout</p>
             </div>
             {

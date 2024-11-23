@@ -3,12 +3,14 @@ import axios from 'axios';
 import { message } from 'antd';
 import { HideLoading, ShowLoading } from '../../redux/rootSlice';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [ user, setUser] =React.useState({
         username: "",
         password: ""
     })
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const login = async() => {
         try{
@@ -18,7 +20,7 @@ function Login() {
             if(response.data.success){
                 message.success(response.data.message);
                 localStorage.setItem('token',JSON.stringify(response.data));
-                window.location.href="/admin";
+                navigate("/admin");
             }else{
                 message.error(response.data.message);
             }
