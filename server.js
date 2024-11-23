@@ -1,25 +1,34 @@
-const express = require('express')
-const app = express();
-
+const express = require('express');
 const cors = require('cors');
-const corsOptions = {
-  origin: 'https://portfolix-client.onrender.com', // your frontend URL
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type, Authorization',
-};
-app.use(cors(corsOptions));
-
+const app = express();
+const path = require('path');
 
 require("dotenv").config();
-/*mongodb connection*/
+
+/* MongoDB connection */
 const dbConfig = require("./config/dbConfig");
 
+/* Routes */
 const portfolioRoute = require("./routes/portfolioRoute");
 
+app.use( cors()); // Apply CORS middleware
 app.use(express.json());
+
+/* API Routes */
 app.use("/api/portfolio", portfolioRoute);
 
+// Serve static files from the React app
+const clientBuildPath = path.join(__dirname, 'client', 'build');
+app.use(express.static(clientBuildPath));
+
+// Catch-all route to serve React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+});
+
+
+// Start server
 const port = process.env.PORT || 5000;
-app.listen(port,() => {
-    console.log(`Server running on port ${port}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
