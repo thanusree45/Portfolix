@@ -16,7 +16,14 @@ function AdminIntro() {
             });
             console.log(response.data);
             dispatch(HideLoading())
-            if(response.data.success){
+            if(response.data.success){ 
+                dispatch({
+                    type: 'UPDATE_PORTFOLIO',
+                    payload: {
+                    ...portfolioData,
+                    intro: response.data.data, // Update the intro part of portfolioData
+                },
+            });
                 message.success(response.data.message)
             }else{
                 message.error(response.data.message);
