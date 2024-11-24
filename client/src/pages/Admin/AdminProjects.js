@@ -20,7 +20,7 @@ function AdminProjects() {
             dispatch(ShowLoading());
             let response;
             if (selectedItemForEdit) {
-                response = await axios.post('/api/portfolio/update-project', {
+                response = await axios.post('https://portfolix.onrender.com/api/portfolio/update-project', {
                     ...values,
                     _id: selectedItemForEdit._id,
                 });
