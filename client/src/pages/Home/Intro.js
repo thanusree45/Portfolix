@@ -6,7 +6,7 @@ function Intro() {
   const {intro} = portfolioData;
   const {firstName, lastName,welcomeText, description, caption} = intro;
   return (
-    <div className='h-[80vh] bg-primary flex-col items-start justify-center gap-8 py-6 m-50 sm:mb-40'>
+    <div className='h-[80vh] bg-primary flex-col items-start justify-center gap-8 py-6 m-50 sm:mb-80'>
      <h1 className='text-white text-3xl sm:text-1xl'>{welcomeText || ''}</h1>
      <div> <h1 className='text-6xl sm:text-3xl text-secondary font-semibold'>{firstName || ''}</h1>
       <h1 className='text-6xl sm:text-2xl text-secondary font-semibold'>{lastName || ''}</h1>
