@@ -29,4 +29,4 @@
 - Developed an admin panel with Ant Design to allow easy updates by the user.
 
 ## Live Demo
-You can explore the live project at: [Portfolix](https://portfolix.onrender.com)
+You can explore the live project at: [Portfolix](https://portfolix-client.onrender.com)
