@@ -17,7 +17,7 @@ function AdminExperiences() {
             dispatch(ShowLoading());
             let response;
             if(selectedItemForEdit){
-                response = await axios.post('/api/portfolio/update-experience',{
+                response = await axios.post('https://portfolix.onrender.com/api/portfolio/update-experience',{
                     ...values,
                     _id: selectedItemForEdit._id,
                 });
