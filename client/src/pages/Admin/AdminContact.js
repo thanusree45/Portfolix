@@ -14,7 +14,7 @@ function AdminContact() {
     console.log("About ID:", portfolioData.contact._id); // Log ID    
     try{
             dispatch(ShowLoading());
-            const response = await axios.post('/api/portfolio/update-contact',{
+            const response = await axios.post('https://portfolix.onrender.com/api/portfolio/update-contact',{
                 ...values,
                 _id: portfolioData.contact._id,
             });
