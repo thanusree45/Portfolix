@@ -10,7 +10,7 @@ function About() {
   return (
     <div>
       <SectionTitle title="About" />
-      <div className='flex w-full items-center sm:flex-col'>
+      <div className='flex w-full items-center sm:flex-col sm:mt-30 sm:mb-30'>
         <div className='h-[70vh] w-1/3 sm:w-full'>
           <img 
             src={lottieURL || '/assets/thanusreepic.jpg'} 
