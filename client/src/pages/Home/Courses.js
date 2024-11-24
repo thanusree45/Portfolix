@@ -10,7 +10,7 @@ function Courses() {
     return (
     <div>
         <SectionTitle title="Courses" />
-        <div className='flex py-10 gap-20 sm:flex-col'>
+        <div className='flex py-10 gap-20 sm:flex-col sm:mb-30'>
         <div className='flex flex-col gap-10 border-l-2 border-[#fde68a] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full'>
         {courses.map((course, index) => (
           <div key={index} onClick={() => {
